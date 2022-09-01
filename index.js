@@ -11,6 +11,8 @@ const GRAVITY = 0.7;
 
 const playerHealthBar = document.querySelector(".player-health");
 const enemyHealthBar = document.querySelector(".enemy-health");
+const timerDom = document.querySelector(".timer");
+const gameOver = document.querySelector(".game-over");
 
 class Sprite {
   constructor({ position, velocity, color = "red", offset }) {
@@ -98,6 +100,31 @@ function rectangularCollision({ rect1, rect2 }) {
   );
 }
 
+function determineWinner({ player, enemy, timerId }) {
+  clearTimeout(timerId);
+  gameOver.style.display = "block";
+  if (player.health === enemy.health) {
+    gameOver.textContent = "tie";
+  } else if (player.health > enemy.health) {
+    gameOver.textContent = "player 1 wins";
+  } else if (player.health < enemy.health) {
+    gameOver.textContent = "player 2 wins";
+  }
+}
+
+let timer = 60;
+let timerId;
+function decreaseTimer() {
+  timerId = setTimeout(decreaseTimer, 1000);
+  if (timer > 0) {
+    timer--;
+    timerDom.textContent = timer;
+  } else {
+    determineWinner({ player, enemy, timerId });
+  }
+}
+timerId = setTimeout(decreaseTimer, 1000);
+
 function animate() {
   requestAnimationFrame(animate);
   c.fillStyle = "black";
@@ -141,6 +168,11 @@ function animate() {
     player.health -= 20;
     playerHealthBar.style.width = `${player.health}%`;
     console.log("enemy hit!");
+  }
+
+  // end game based on health
+  if (enemy.health <= 0 || player.health <= 0) {
+    determineWinner({ player, enemy, timerId });
   }
 }
 animate();
