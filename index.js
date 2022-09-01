@@ -9,6 +9,9 @@ c.fillRect(0, 0, 1024, 576);
 
 const GRAVITY = 0.7;
 
+const playerHealthBar = document.querySelector(".player-health");
+const enemyHealthBar = document.querySelector(".enemy-health");
+
 class Sprite {
   constructor({ position, velocity, color = "red", offset }) {
     this.position = position;
@@ -27,6 +30,7 @@ class Sprite {
     };
     this.color = color;
     this.isAttacking;
+    this.health = 100;
   }
 
   draw() {
@@ -124,6 +128,8 @@ function animate() {
     player.isAttacking
   ) {
     player.isAttacking = false;
+    enemy.health -= 20;
+    enemyHealthBar.style.width = `${enemy.health}%`;
     console.log("player hit!");
   }
 
@@ -132,6 +138,8 @@ function animate() {
     enemy.isAttacking
   ) {
     enemy.isAttacking = false;
+    player.health -= 20;
+    playerHealthBar.style.width = `${player.health}%`;
     console.log("enemy hit!");
   }
 }
