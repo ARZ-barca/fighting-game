@@ -4,9 +4,16 @@
   box-sizing: border-box;
 }
 
+html {
+  font-family: "Press Start 2P", cursive;
+}
+
 .container {
-  position: relative;
+  position: absolute;
   width: fit-content;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .interface {
@@ -20,14 +27,23 @@
 .enemy-health-container,
 .player-health-container {
   flex: 1;
-  background-color: yellow;
+  background-color: red;
+  border: 4px solid white;
+}
+
+.enemy-health-container {
+  border-left: none;
+}
+
+.player-health-container {
+  border-right: none;
 }
 
 .player-health,
 .enemy-health {
   width: 100%;
   height: 30px;
-  background-color: blue;
+  background-color: #818cf8;
 }
 
 .player-health {
@@ -35,12 +51,14 @@
 }
 
 .timer {
-  background-color: red;
+  background-color: black;
   width: 100px;
-  height: 100px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: white;
+  border: 4px solid white;
 }
 
 .game-over {
