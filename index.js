@@ -36,28 +36,28 @@ const player = new Fighter({
   position: { x: 0, y: 0 },
   velocity: { x: 0, y: 10 },
   offset: { x: 215, y: 157 },
-  imageSrc: "./assets/samuraiMack/idle.png",
+  imageSrc: "./assets/samuraiMack/Idle.png",
   framesMax: 8,
   scale: 2.5,
   sprites: {
     idle: {
-      imageSrc: "./assets/samuraiMack/idle.png",
+      imageSrc: "./assets/samuraiMack/Idle.png",
       framesMax: 8,
     },
     run: {
-      imageSrc: "./assets/samuraiMack/run.png",
+      imageSrc: "./assets/samuraiMack/Run.png",
       framesMax: 8,
     },
     jump: {
-      imageSrc: "./assets/samuraiMack/jump.png",
+      imageSrc: "./assets/samuraiMack/Jump.png",
       framesMax: 2,
     },
     fall: {
-      imageSrc: "./assets/samuraiMack/fall.png",
+      imageSrc: "./assets/samuraiMack/Fall.png",
       framesMax: 2,
     },
     attack1: {
-      imageSrc: "./assets/samuraiMack/attack1.png",
+      imageSrc: "./assets/samuraiMack/Attack1.png",
       framesMax: 6,
     },
     takeHit: {
@@ -79,32 +79,32 @@ const enemy = new Fighter({
   position: { x: 500, y: 300 },
   velocity: { x: 0, y: 0 },
   offset: { x: 215, y: 167 },
-  imageSrc: "./assets/kenji/idle.png",
+  imageSrc: "./assets/kenji/Idle.png",
   framesMax: 4,
   scale: 2.5,
   sprites: {
     idle: {
-      imageSrc: "./assets/kenji/idle.png",
+      imageSrc: "./assets/kenji/Idle.png",
       framesMax: 4,
     },
     run: {
-      imageSrc: "./assets/kenji/run.png",
+      imageSrc: "./assets/kenji/Run.png",
       framesMax: 6,
     },
     jump: {
-      imageSrc: "./assets/kenji/jump.png",
+      imageSrc: "./assets/kenji/Jump.png",
       framesMax: 2,
     },
     fall: {
-      imageSrc: "./assets/kenji/fall.png",
+      imageSrc: "./assets/kenji/Fall.png",
       framesMax: 2,
     },
     attack1: {
-      imageSrc: "./assets/kenji/attack1.png",
+      imageSrc: "./assets/kenji/Attack1.png",
       framesMax: 4,
     },
     takeHit: {
-      imageSrc: "./assets/kenji/take hit.png",
+      imageSrc: "./assets/kenji/Take hit.png",
       framesMax: 3,
     },
     death: {
